@@ -30,7 +30,10 @@ func (h *handler) signin(c echo.Context) error {
 	submittedPassword := user.Password
 	err := user.FindByEmail(h.db)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusNotFound, "Unable to find your account")
+		err := user.FindByID(h.db)
+		if err != nil {
+			return echo.NewHTTPError(http.StatusNotFound, "Unable to find your account")
+		}
 	}
 	ok := user.CheckPassword(submittedPassword)
 	if !ok {
