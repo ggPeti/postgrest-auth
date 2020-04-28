@@ -8,8 +8,8 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/labstack/gommon/log"
-	"github.com/alexandrevilain/postgrest-auth/pkg/config"
-	"github.com/alexandrevilain/postgrest-auth/pkg/mail"
+	"github.com/ggpeti/postgrest-auth/pkg/config"
+	"github.com/ggpeti/postgrest-auth/pkg/mail"
 )
 
 var server *echo.Echo

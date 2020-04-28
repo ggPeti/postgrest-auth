@@ -13,7 +13,7 @@ docker run -p 3001:3001 \
     -e POSTGREST_AUTH_DB_CONNECTIONSTRING=postgres://user:pass@localhost/db \
     -e POSTGREST_AUTH_EMAIL_AUTH_PASS=pass \
     [...]
-    alexandrevilain/postgrest-auth
+    ggpeti/postgrest-auth
 ```
 
 ## API

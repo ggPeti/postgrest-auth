@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/alexandrevilain/postgrest-auth/pkg/oauth"
+	"github.com/ggpeti/postgrest-auth/pkg/oauth"
 
-	"github.com/alexandrevilain/postgrest-auth/pkg/config"
-	"github.com/alexandrevilain/postgrest-auth/pkg/mail"
-	"github.com/alexandrevilain/postgrest-auth/pkg/model"
-	"github.com/alexandrevilain/postgrest-auth/pkg/oauth/facebook"
-	"github.com/alexandrevilain/postgrest-auth/pkg/oauth/google"
+	"github.com/ggpeti/postgrest-auth/pkg/config"
+	"github.com/ggpeti/postgrest-auth/pkg/mail"
+	"github.com/ggpeti/postgrest-auth/pkg/model"
+	"github.com/ggpeti/postgrest-auth/pkg/oauth/facebook"
+	"github.com/ggpeti/postgrest-auth/pkg/oauth/google"
 	"github.com/labstack/echo"
 )
 
