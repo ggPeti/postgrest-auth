@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"net/http"
+	"net/url"
 
 	"github.com/ggpeti/postgrest-auth/pkg/oauth"
 
@@ -76,7 +77,7 @@ func (h *handler) signup(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "An error occurred while creating your account")
 	}
 
-	confirmLink := fmt.Sprintf(h.config.Links.Confirm, user.Email, user.ID, token)
+	confirmLink := fmt.Sprintf(h.config.Links.Confirm, url.QueryEscape(user.Email), user.ID, token)
 	email, err := h.emails.GenerateConfirmEmail(user.Email, confirmLink)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "An error occurred while creating your account")
