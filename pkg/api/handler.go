@@ -136,7 +136,7 @@ func (h *handler) sendPasswordReset(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "An error occurred while creating your reset password")
 	}
 
-	resetLink := fmt.Sprintf(h.config.Links.Reset, token)
+	resetLink := fmt.Sprintf(h.config.Links.Reset, token, user.Email)
 	email, err := h.emails.GenerateRestePasswordEmail(user.Email, resetLink)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "An error occurred while creating your reset password")
